@@ -1,0 +1,6 @@
+.editorconfig
+.git
+bin
+README.md
+LICENSE
+Makefile

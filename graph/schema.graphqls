@@ -1,0 +1,52 @@
+type Todo {
+  id: ID!
+  text: String!
+  done: Boolean!
+  user: User!
+}
+
+type User {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  todos: [Todo!]!
+}
+
+input NewTodo {
+  text: String!
+  userId: String!
+}
+
+type Mutation {
+  createTodo(input: NewTodo!): Todo!
+}
+
+type Program {
+  id: ID!
+  name: String!
+  description: String
+  mainUrl: String!
+  affiliateUrl: String!
+  uniqueCode: String!
+  status: String!
+  productsCount: Int
+  currency: String
+  workingCurrencyCode: String
+  defaultLeadCommissionAmount: String
+  defaultLeadCommissionType: String
+  defaultSaleCommissionRate: String
+  defaultSaleCommissionType: DefaultSaleCommissionType
+  averagePaymentTime: Int
+  logoPath: String
+  category: String
+  sellingCountries: [SellingCountry]
+  source: String!
+  order: Int!
+}
+
+enum DefaultSaleCommissionType {
+  Percent
+  Variable
+}
